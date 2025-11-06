@@ -7,7 +7,7 @@ import PersonalInfo from './SarsForm/PersonalInfo';
 import EnrolledDegree from './SarsForm/EnrolledDegree';
 import GradStudyBeginning from './SarsForm/GradStudyBeginning';
 import FacultyAdvisor from './SarsForm/FacultyAdvisor';
-import MilestonesAndProgress from './SarsForm/MilestonesAndProgress';
+import MastersMilestones from './SarsForm/MastersMilestones';
 import PhDMilestones from './SarsForm/PhDMilestones';
 
 export default function SarsStudentPage({ user }) {
@@ -43,6 +43,11 @@ export default function SarsStudentPage({ user }) {
     const [PhDCompPlanned, setPhDCompPlanned] = useState("")
     const [PhDSemester, setPhDSemester] = useState("")
     const [PhDYear, setPhDYear] = useState("")
+    const [PhDPlanOfStudyCompPlanned, setPhDPlanOfStudyCompPlanned] = useState("")
+    const [PhDPlanOfStudySemester, setPhDPlanOfStudySemester] = useState("")
+    const [PhDplanOfStudyYear, setPhDPlanOfStudyYear] = useState("")
+
+
 
     const degreeOptions = [
         { id: "MS-thesis", label: "MS (Thesis)", value: "MS (Thesis)" },
@@ -90,7 +95,7 @@ export default function SarsStudentPage({ user }) {
                     selectedInstructorYear={selectedInstructorYear} setSelectedInstructorYear={setSelectedInstructorYear}
                     selectedInstructors={selectedInstructors} setSelectedInstructors={setSelectedInstructors}
                 />
-                <MilestonesAndProgress 
+                <MastersMilestones 
                     enteredProgramCompPlanned={enteredProgramCompPlanned} setEnteredProgramCompPlanned={setEnteredProgramCompPlanned}
                     enteredProgramSemester={enteredProgramSemester} setEnteredProgramSemester={setEnteredProgramSemester}
                     enteredProgramYear={enteredProgramYear} setEnteredProgramYear={setEnteredProgramYear}
@@ -101,6 +106,18 @@ export default function SarsStudentPage({ user }) {
                     finalDefenseSemester={finalDefenseSemester} setFinalDefenseSemester={setFinalDefenseSemester}
                     finalDefenseYear={finalDefenseYear} setFinalDefenseYear={setFinalDefenseYear}
                     milestoneOptions={milestoneOptions} seasonOptions={seasonOptions}
+                />
+                <PhDMilestones 
+                    milestoneOptions={milestoneOptions} seasonOptions={seasonOptions}
+                    PhDCompPlanned={PhDCompPlanned} setPhDCompPlanned={setPhDCompPlanned}
+                    PhDSemester={PhDSemester} setPhDSemester={setPhDSemester}
+                    PhDYear={PhDYear} setPhDYear={setPhDYear}
+                    PhDPlanOfStudyCompPlanned={PhDPlanOfStudyCompPlanned} setPhDPlanOfStudyCompPlanned={setPhDPlanOfStudyCompPlanned}
+                    PhDPlanOfStudySemester={PhDPlanOfStudySemester} setPhDPlanOfStudySemester={setPhDPlanOfStudySemester}
+                    PhDplanOfStudyYear={PhDplanOfStudyYear} setPhDPlanOfStudyYear={setPhDPlanOfStudyYear}
+
+                    
+                
                 />
             </form>
         </div>
