@@ -1,6 +1,7 @@
 import React from "react";
 import "../Forms.css"
 
+import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
 export default React.memo(function FacultyAdvisor({ selectedInstructor, setSelectedInstructor, 
     selectedInstructorSemester, setSelectedInstructorSemester, 
     selectedInstructorYear, setSelectedInstructorYear, 
@@ -73,23 +74,12 @@ export default React.memo(function FacultyAdvisor({ selectedInstructor, setSelec
                         </td>
 
                         <td>
-                            <div className='row'>
-                                {seasonOptions.map((option) => (
-                                    <span key={`advisor-${option.id}`} className='row'>
-                                        <input
-                                            type='radio'
-                                            name='advisorSemester'
-                                            id={`advisor-${option.id}`}
-                                            value={option.value}
-                                            checked={selectedInstructorSemester === option.value}
-                                            onChange={(e) => setSelectedInstructorSemester(e.target.value)}
-                                        />
-                                        <label htmlFor={`advisor-${option.id}`} className='form-radio-options'>
-                                            {option.label}
-                                        </label>
-                                    </span>
-                                ))}
-                            </div>
+                            <RadioOptionsInput 
+                                options={seasonOptions} 
+                                name="advisor-semester"
+                                stateVar={selectedInstructorSemester}
+                                stateFunc={setSelectedInstructorSemester}
+                            />
                         </td>
 
                         <td>

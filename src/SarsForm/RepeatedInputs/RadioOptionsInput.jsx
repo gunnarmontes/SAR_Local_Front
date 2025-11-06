@@ -1,11 +1,11 @@
 import React from "react"
 import "../../Forms.css"
 
-export default React.memo(function SeasonInput({seasonOptions, name, stateVar, stateFunc}) {
-
+export default React.memo(function RadioOptionsInput({options, name, stateVar, stateFunc}) {
+    console.log(options)
     return (
         <div className="row">
-            {seasonOptions.map((option) => (
+            {options.map((option) => (
                 <span key={`${name}-${option.id}`} className="row">
                     <input 
                         type="radio"

@@ -1,6 +1,8 @@
 import React from "react";
 import "../Forms.css"
 
+import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
+
 export default React.memo( function GradStudyBeginning({ seasonOptions, admissionSeason, setAdmissionSeason, admissionYear, setAdmissionYear }) {
 
 
@@ -10,22 +12,12 @@ export default React.memo( function GradStudyBeginning({ seasonOptions, admissio
             <legend>Which semester did you begin graduate studies?</legend>
             <label className='form-label'>Semester Admitted</label>
             <div className='form-options-div row'>
-                {seasonOptions.map((option) => (
-                    <span key={`admission-${option.id}`} className='row'>
-                        <input
-                            type='radio'
-                            name='admissionSeason'
-                            id={`admission-${option.id}`}
-                            value={option.value}
-                            checked={admissionSeason === option.value}
-                            onChange={(e) => setAdmissionSeason(e.target.value)}
-                        />
-                        <label htmlFor={`admission-${option.id}`} className='form-radio-options'>
-                            {option.label}
-                        </label>
-                    </span>
-                ))}
-  
+                <RadioOptionsInput 
+                    options={seasonOptions}
+                    name="admissionSeason"
+                    stateVar={admissionSeason}
+                    stateFunc={setAdmissionSeason}
+                />
             </div>
             <label className='form-label'>Year</label>
             <input 

@@ -1,6 +1,7 @@
 import React from "react";
 import "../Forms.css"
 
+import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
 export default React.memo(function MilestonesAndProgress( {
     enteredProgramCompPlanned, setEnteredProgramCompPlanned,
     enteredProgramSemester, setEnteredProgramSemester,
@@ -40,36 +41,22 @@ export default React.memo(function MilestonesAndProgress( {
                             <p>Entered Program</p>
                         </td>
                         <td>
-                            {milestoneOptions.map((option) => (
-                                <span key={`enteredProgramProg-${option.id}`}>
-                                    <input 
-                                        type='radio'
-                                        name='enteredProgramProg'
-                                        id={`enteredProgramProg-${option.id}`}
-                                        value={option.value}
-                                        checked={enteredProgramCompPlanned === option.value}
-                                        onChange={(e) => setEnteredProgramCompPlanned(e.target.value)}
-                                    />
-                                    <label>{option.label}</label>
-                                </span>
-                            ))}
+                            <RadioOptionsInput 
+                                options={milestoneOptions}
+                                name="enteredProgramProg"
+                                stateVar={enteredProgramCompPlanned}
+                                stateFunc={setEnteredProgramCompPlanned}
+                            />
                         </td>
                         <td>
-                            {seasonOptions.map((option) => (
-                                <span key={`enteredProgramSem-${option.id}`} className='row'>
-                                    <input
-                                        type='radio'
-                                        name='enteredProgramSem'
-                                        id={`enteredProgramSem-${option.id}`}
-                                        value={option.value}
-                                        checked={enteredProgramSemester === option.value}
-                                        onChange={(e) => setEnteredProgramSemester(e.target.value)}
-                                    />
-                                    <label htmlFor={`enteredProgramSem-${option.id}`} className='form-radio-options'>
-                                        {option.label}
-                                    </label>
-                                </span>
-                            ))}
+                            <RadioOptionsInput 
+                                options={seasonOptions}
+                                name="enteredProgramSem"
+                                stateVar={enteredProgramSemester}
+                                stateFunc={setEnteredProgramSemester}
+                            />
+                            
+                            
                         </td>
                         <td>
                             <span>
@@ -87,37 +74,23 @@ export default React.memo(function MilestonesAndProgress( {
                         <td>
                             <p>Plan Of Study Field</p>
                         </td>
-                        <td>
-                            {milestoneOptions.map((option) => (
-                                <span key={`planOfStudyProg-${option.id}`}>
-                                    <input 
-                                        type='radio'
-                                        name='enteredProgramProg'
-                                        id={`planOfStudyProg-${option.id}`}
-                                        value={option.value}
-                                        checked={planOfStudyCompPlanned === option.value}
-                                        onChange={(e) => setPlanOfStudyCompPlanned(e.target.value)}
-                                    />
-                                    <label>{option.label}</label>
-                                </span>
-                            ))}
+                        <td>    
+                            <RadioOptionsInput 
+                                options={milestoneOptions}
+                                name="enteredProgramProg"
+                                stateVar={planOfStudyCompPlanned}
+                                stateFunc={setPlanOfStudyCompPlanned}
+                            />
+                            
                         </td>
                         <td>
-                            {seasonOptions.map((option) => (
-                                <span key={`planOfStudySem-${option.id}`} className='row'>
-                                    <input
-                                        type='radio'
-                                        name='planOfStudySem'
-                                        id={`planOfStudySem-${option.id}`}
-                                        value={option.value}
-                                        checked={planOfStudySemester === option.value}
-                                        onChange={(e) => setPlanOfStudySemester(e.target.value)}
-                                    />
-                                    <label htmlFor={`enteredProgramSem-${option.id}`} className='form-radio-options'>
-                                        {option.label}
-                                    </label>
-                                </span>
-                            ))}
+                            <RadioOptionsInput 
+                                options={seasonOptions}
+                                name="planOfStudySem"
+                                stateVar={planOfStudySemester}
+                                stateFunc={setPlanOfStudySemester}
+                            />
+                            
                         </td>
                         <td>
                             <span>
@@ -136,36 +109,21 @@ export default React.memo(function MilestonesAndProgress( {
                             <p>Final Defense</p>
                         </td>
                         <td>
-                            {milestoneOptions.map((option) => (
-                                <span key={`finalDefenseProg-${option.id}`}>
-                                    <input 
-                                        type='radio'
-                                        name='finalDefenseProg'
-                                        id={`finalDefenseProg-${option.id}`}
-                                        value={option.value}
-                                        checked={finalDefenseCompPlanned === option.value}
-                                        onChange={(e) => setFinalDefenseCompPlanned(e.target.value)}
-                                    />
-                                    <label>{option.label}</label>
-                                </span>
-                            ))}
+                            <RadioOptionsInput 
+                                options={milestoneOptions}
+                                name="finalDefenseProg"
+                                stateVar={finalDefenseCompPlanned}
+                                stateFunc={setFinalDefenseCompPlanned}
+                            />
                         </td>
                         <td>
-                            {seasonOptions.map((option) => (
-                                <span key={`finalDefenseSem-${option.id}`} className='row'>
-                                    <input
-                                        type='radio'
-                                        name='finalDefenseSem'
-                                        id={`finalDefenseSem-${option.id}`}
-                                        value={option.value}
-                                        checked={finalDefenseSemester === option.value}
-                                        onChange={(e) => setFinalDefenseSemester(e.target.value)}
-                                    />
-                                    <label htmlFor={`enteredProgramSem-${option.id}`} className='form-radio-options'>
-                                        {option.label}
-                                    </label>
-                                </span>
-                            ))}
+                            <RadioOptionsInput 
+                                options={seasonOptions}
+                                name="finalDefenseSem"
+                                stateVar={finalDefenseSemester}
+                                stateFunc={setFinalDefenseSemester}
+                            />
+                            
                         </td>
                         <td>
                             <span>
