@@ -2,6 +2,8 @@ import React from "react";
 import "../Forms.css"
 
 import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
+import YearTextbox from "./RepeatedInputs/YearTextbox";
+
 export default React.memo(function MilestonesAndProgress( {
     enteredProgramCompPlanned, setEnteredProgramCompPlanned,
     enteredProgramSemester, setEnteredProgramSemester,
@@ -59,15 +61,11 @@ export default React.memo(function MilestonesAndProgress( {
                             
                         </td>
                         <td>
-                            <span>
-                                <input
-                                    type='number'
-                                    name='enteredProgramYear'
-                                    id='enteredProgramYear'
-                                    value={enteredProgramYear}
-                                    onChange={(e) => setEnteredProgramYear(e.target.value)}
-                                />
-                            </span>
+                            <YearTextbox
+                                name="MastersEnteredProgram"
+                                stateVar={enteredProgramYear}
+                                stateFunc={setEnteredProgramYear}
+                            />
                         </td>    
                     </tr>
                     <tr>
@@ -93,15 +91,11 @@ export default React.memo(function MilestonesAndProgress( {
                             
                         </td>
                         <td>
-                            <span>
-                                <input
-                                    type='number'
-                                    name='planOfStudyYear'
-                                    id='planOfStudyYear'
-                                    value={planOfStudyYear}
-                                    onChange={(e) => setPlanOfStudyYear(e.target.value)}
-                                />
-                            </span>
+                            <YearTextbox
+                                name="MastersPlanOfStudy"
+                                stateVar={planOfStudyYear}
+                                stateFunc={setPlanOfStudyYear}
+                            />
                         </td>
                     </tr>
                     <tr>
@@ -126,15 +120,11 @@ export default React.memo(function MilestonesAndProgress( {
                             
                         </td>
                         <td>
-                            <span>
-                                <input
-                                    type='number'
-                                    name='finalDefenseYear'
-                                    id='finalDefenseYear'
-                                    value={finalDefenseYear}
-                                    onChange={(e) => setFinalDefenseYear(e.target.value)}
-                                />
-                            </span>
+                            <YearTextbox
+                                name="MastersFinalDefense"
+                                stateVar={finalDefenseYear}
+                                stateFunc={setFinalDefenseYear}
+                            />
                         </td>
                     </tr>
                 </tbody>

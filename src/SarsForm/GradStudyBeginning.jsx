@@ -2,6 +2,7 @@ import React from "react";
 import "../Forms.css"
 
 import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
+import YearTextbox from "./RepeatedInputs/YearTextbox";
 
 export default React.memo( function GradStudyBeginning({ seasonOptions, admissionSeason, setAdmissionSeason, admissionYear, setAdmissionYear }) {
 
@@ -19,13 +20,11 @@ export default React.memo( function GradStudyBeginning({ seasonOptions, admissio
                     stateFunc={setAdmissionSeason}
                 />
             </div>
-            <label className='form-label'>Year</label>
-            <input 
-                type='number'
-                className="form-control" 
-                style={{lineHeight: 1}} 
-                value={admissionYear}
-                onChange={(e) => setAdmissionYear(e.target.value)}
+            <YearTextbox
+                name="gradStudyBeginning"
+                stateVar={admissionYear}
+                stateFunc={setAdmissionYear}
+            
             />
         </fieldset>
 

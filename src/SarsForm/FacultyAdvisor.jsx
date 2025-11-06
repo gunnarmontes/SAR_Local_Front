@@ -2,6 +2,8 @@ import React from "react";
 import "../Forms.css"
 
 import RadioOptionsInput from "./RepeatedInputs/RadioOptionsInput";
+import YearTextbox from "./RepeatedInputs/YearTextbox";
+
 export default React.memo(function FacultyAdvisor({ selectedInstructor, setSelectedInstructor, 
     selectedInstructorSemester, setSelectedInstructorSemester, 
     selectedInstructorYear, setSelectedInstructorYear, 
@@ -83,12 +85,12 @@ export default React.memo(function FacultyAdvisor({ selectedInstructor, setSelec
                         </td>
 
                         <td>
-                            <input
-                                id='selectedInstructorYear'
-                                type='number'
-                                value={selectedInstructorYear}
-                                onChange={(e) => setSelectedInstructorYear(e.target.value)}
+                            <YearTextbox
+                                name="FacultyAdvisor"
+                                stateVar={selectedInstructorYear}
+                                stateFunc={setSelectedInstructorYear}
                             />
+                            
                         </td>
 
                         <td>
